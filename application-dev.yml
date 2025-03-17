@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/gamedemodb
+    username: postgres
+    password: 9991509
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+app:
+  feature:
+    enable-websocket: true
+    enable-redis-cache: false
+    enable-rabbitmq: false
+    max-game-rooms: 100
+    max-players-per-room: 8
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    com.emrearcnn.gamedemo: DEBUG
+    org.springframework.cloud.config: DEBUG 

@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: game-demo
+  datasource:
+    url: jdbc:postgresql://localhost:5432/gamedemodb
+    username: postgres
+    password: 9991509
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    time-zone: Europe/Istanbul
+
+server:
+  port: 8080
+  servlet:
+    context-path: ""
+
+app:
+  jwt:
+    secret: bXktc2VjcmV0LWtleS13aGljaC1zaG91bGQtYmUtY2hhbmdlZC1pbi1wcm9kdWN0aW9uLWFuZC1rZXB0LXNhZmUtc29tZXdoZXJlLXNlY3VyZQ==
+    expiration: 86400000 # 1 gün (milisaniye cinsinden)
+    refresh-expiration: 604800000 # 7 gün (milisaniye cinsinden)
+  feature:
+    enable-websocket: true
+    enable-redis-cache: true
+    enable-rabbitmq: true
+    max-game-rooms: 200
+    max-players-per-room: 10
+
+logging:
+  level:
+    org.springframework.security: INFO
+    com.emrearcnn.gamedemo: INFO 
